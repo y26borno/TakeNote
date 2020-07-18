@@ -110,12 +110,27 @@ const removeNote = function(title){
 
 
 
+const listNotes = function(){
+
+    let notes = loadNotes();
+
+    notes.forEach((note,index)=>{
+
+        console.log(index+". Title: "+note.title)
+
+    })
+
+
+}
+
+
+
 
 
 module.exports= {
 
     getNotes:getNotes,
     addNote:addNote,
-    removeNote:removeNote
-
+    removeNote:removeNote,
+    listNotes:listNotes
 };

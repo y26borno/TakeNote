@@ -73,15 +73,15 @@ yargs.command({
          title: {
   
              describe:'Note title',
-             demandOption:true,
+             demandOption:false,
              type:'string'
 
          }
 
     },
-    handler: function(argv){
+    handler(){
 
-       console.log("Hello this is list a notes",argv);
+      notes.listNotes();
     } 
 });
 
