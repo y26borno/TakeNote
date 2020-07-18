@@ -66,9 +66,56 @@ const loadNotes = function(){
 
 }
 
+
+const removeNote = function(title){
+
+
+
+    //console.log(title+" Note is removed!")
+
+
+    let notes = loadNotes()
+    
+    const note = notes.filter((note)=>{
+
+
+        return note.title != title;
+    })
+
+
+    const note1 = notes.filter((note)=>{
+
+
+        return note.title == title;
+    })
+
+     
+    if(note1.length == 0){
+     
+          console.log("Not found and not removed")
+    }
+
+    if(note.length >0 && note1.length == 1 ){
+
+        console.log("found and removed")
+        saveNotes(note); 
+    }
+     
+     //delete notes[count];
+     
+     
+
+     //saveNotes(notes);
+}
+
+
+
+
+
 module.exports= {
 
     getNotes:getNotes,
-    addNote:addNote
+    addNote:addNote,
+    removeNote:removeNote
 
 };
